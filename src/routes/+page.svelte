@@ -37,7 +37,7 @@
         transform: skew(-8deg);
     }
     .input{
-        border: 0.05em solid var(--fg-color);
+        /* border: 0.05em solid var(--fg-color); */
         /* width: 80%; */
         font: inherit;
         font-size: 48px;

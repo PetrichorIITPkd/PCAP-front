@@ -48,19 +48,23 @@
     <div class="content">
         <div class="input-cont">
             <div class="heading">{current_step}</div>
-            <div class="input">
-                <input type="text" placeholder="enter your {current_step}" class="tp-field inputbox" bind:value={current_temp}>
-                <button class="tp-field submitbutton" on:click={() => {
-                    validation = validate(current_temp);
-                    console.log(validation)
-                    if (validation != ""){return}
-                    if (step < steps.length - 1){
+            <div>
+                <form on:submit|preventDefault class="input">
+                    <input type="text" placeholder="enter your {current_step}" class="tp-field inputbox" bind:value={current_temp}>
+                    <button class="tp-field submitbutton" on:click={() => {
+                        validation = validate(current_temp);
+                        console.log(validation)
+                        if (validation != ""){return}
                         data[steps[step]] = current_temp;
-                        step++;
-                        current_temp = "";
-                        console.log(data)
-                    } else {}
-                }}> > </button>
+                        if (step < steps.length - 1){
+                            step++;
+                            current_temp = "";
+                            console.log(data)
+                        } else {
+                            console.log(data, "send to api")
+                        }
+                    }}> > </button>
+                </form>
             </div>
             <div class="validation" style="color: red;">{validation}</div>
         </div>

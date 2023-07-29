@@ -43,7 +43,7 @@
 
 <div class="main">
     <div class="header">
-        <img src="/favicon.ico" alt=""> <span>Petrichor <span style="color: red;">CA</span> Sign Up</span>
+        <img src="/favicon.ico" alt=""> <span>Petrichor <span style="color: var(--accent);">CA</span> Sign Up</span>
     </div>
     <div class="content">
         <div class="input-cont">
@@ -78,6 +78,7 @@
         font-size: 36px;
         /* margin-left: 1em; */
         margin-bottom: 0.5em;
+        color: var(--accent-light)
     }
     .input{
         border: 2px solid var(--fg-color);
@@ -102,7 +103,7 @@
         transform: translate(-50%, -50%);
         width: 50em;
         height: 40em;
-        background-color: rgb(16, 16, 16);
+        background-color: var(--accent-dark);
         border-radius: 2em;
         padding: 2em;
         display: flex;

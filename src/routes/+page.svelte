@@ -3,7 +3,7 @@
     <h2 class="subheading">// THE CA PROGRAM //</h2>
 </div>
 <div class="content">
-    <a href="/onboard" type="text" class="tp-field input">Join us as a <span style="color: red;">campus ambassador</span> now</a>
+    <a href="/onboard" type="text" class="tp-field input">Join us as a <span style="color: var(--accent);">campus ambassador</span> now</a>
     <p>Your chance to be the know-it-all, go-to person for Petrichor'23 at your institution! Plus, exciting perks await those who ask work for it!!</p>
 </div>
 
@@ -22,16 +22,28 @@
         align-items: center;
 
     }
+    /* @keyframes gradanim {
+        0%{background-position:0% 0%}
+        50%{background-position:100% 100%}
+        100%{background-position:0% 0%}
+    } */
     .petr{
         font-size: 15vw;
         transition: 200ms ease-in-out;
         margin: 0;
+        background: linear-gradient(140deg, var(--accent-dark), var(--accent), var(--accent-light), var(--accent),  var(--accent-light));
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        /* animation: gradanim 3s ease-in-out infinite; */
+
         
     }
     .subheading{
         margin: 0;
         font-size: 6vw;
         font-weight: normal;
+        color: var(--accent-light);
     }
     .petr:hover{
         transform: skew(-8deg);

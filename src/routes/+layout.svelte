@@ -12,8 +12,8 @@
 <style>
     .sidebar{
         width: 2vw;
-        background-color: white;
-        color: black;
+        background-color: var(--accent-light);
+        color: var(--accent-dark);
         writing-mode: sideways-lr;
         -webkit-writing-mode: vertical-lr;
         text-orientation: mixed;

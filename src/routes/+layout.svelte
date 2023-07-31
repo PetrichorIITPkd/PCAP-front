@@ -24,6 +24,7 @@
         overflow: hidden;
         align-items: center;
         position: fixed;
+        z-index: 1000;
     }
     .sidebar-text{
         position: relative;
@@ -76,6 +77,9 @@
             overflow: unset;
             width: max-content;
             white-space: nowrap;
+        }
+        .main{
+            margin-top: 5vh;
         }
     }
 </style>

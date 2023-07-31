@@ -1,8 +1,11 @@
 <script>
+    import {validateEmail} from '$lib/validate.js'
+    import {API_URL, API} from '$lib/api.js'
     let data = {
         "name": "",
-        "college": "",
+        // "college": "",
         "email": "",
+        "phone": "",
         "password": "",
         "password (again)": ""
     };
@@ -12,10 +15,7 @@
     $: current_step = steps[step];
     let current_temp;
 
-    function validateEmail(email) {
-        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
-    }
+    
 
     let validation = "";
     const validate = (temp) => {
@@ -39,6 +39,28 @@
             validation = validate(current_temp);
         }
     }
+
+    const register = async () => {
+        const response = await fetch(API_URL + API.register, {
+            "method": "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+
+            body: JSON.stringify({
+                username: data.name,
+                password: data.password,
+                phone: data.phone,
+                email: data.email
+            })
+        })
+
+        const result = await response.json();
+        console.log(result)
+        if (result.registered){
+            window.location.replace('/onboard/success')
+        }
+    }
 </script>
 
 <div class="main">
@@ -50,7 +72,12 @@
             <div class="heading">{current_step}</div>
             <div>
                 <form on:submit|preventDefault class="input">
-                    <input type="text" placeholder="enter your {current_step}" class="tp-field inputbox" bind:value={current_temp}>
+                    {#if current_step.includes("pass")}
+                        <input type="password" placeholder="enter your {current_step}" class="tp-field inputbox" bind:value={current_temp}>
+                        {:else}
+
+                        <input type="text" placeholder="enter your {current_step}" class="tp-field inputbox" bind:value={current_temp}>
+                    {/if}
                     <button class="tp-field submitbutton" on:click={() => {
                         validation = validate(current_temp);
                         console.log(validation)
@@ -61,7 +88,8 @@
                             current_temp = "";
                             console.log(data)
                         } else {
-                            console.log(data, "send to api")
+                            console.log(data, "send to api");
+                            register()
                         }
                     }}> > </button>
                 </form>
@@ -122,5 +150,27 @@
     .header>span{
         margin-left: .2em;
         height: 0.8em;
+    }
+    @media (max-width: 1000px){
+        .input-cont{
+            width: 100%;
+        }
+        .main{
+            width: 90%;
+            height: 25em;
+            background-color: black;
+        }
+        .header{
+            font-size: 40px;
+        }
+        .input{
+            font-size: 30px;
+        }
+        .main{
+            position: relative;
+            top: unset;
+            left: unset;
+            transform: unset;
+        }
     }
 </style>

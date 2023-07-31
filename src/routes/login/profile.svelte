@@ -1,24 +1,20 @@
 <script>
-    export let data;
+    export let name;
+    export let CA;
+    export let registrations;
 </script>
 <div class="main">
-    <h1>Hi <span style="color:red">{data.name}!</span></h1>
+    <h1>Hi <span style="color:red">{name}!</span></h1>
     <hr>
     <div class="info">
         <div class="col">
             <div class="card">
                 <div class="heading">Your CA Code</div>
-                <div class="main">{data.CA}</div>
+                <div class="main">{CA}</div>
             </div>
             <div class="card">
                 <div class="heading">Total Registrations</div>
-                <div class="main">{data.CAinfo.registrations}</div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="heading">College</div>
-                <div class="main">{data.college}</div>
+                <div class="main">{registrations}</div>
             </div>
         </div>
     </div>
@@ -40,8 +36,8 @@
     }
     .card{
         background-color: rgb(38, 38, 38);
-        min-width: 25em;
-        max-width: max-content;
+        min-width: 20em;
+        max-width: 90vw;
         padding: 1em;
         border-radius: 1em;
         margin-bottom: 1em; 
@@ -52,7 +48,7 @@
         margin-bottom: 1em;
     }
     .card > .main{
-        font-size: 108px;
+        font-size: 88px;
         width: fit-content;
     }
 </style>

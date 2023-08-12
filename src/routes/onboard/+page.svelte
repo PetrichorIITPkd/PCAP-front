@@ -6,6 +6,8 @@
         // "college": "",
         "email": "",
         "phone": "",
+        "college": "",
+        "current year of degree": "", 
         "password": "",
         "password (again)": ""
     };
@@ -15,6 +17,12 @@
     $: current_step = steps[step];
     let current_temp;
 
+    const back = () => {
+        if(step == 0){return}
+        step--;
+        current_temp = data[steps[step]];
+        console.log(current_temp)
+    }
     
 
     let validation = "";
@@ -65,7 +73,10 @@
 
 <div class="main">
     <div class="header">
-        <img src="/favicon.ico" alt=""> <span>Petrichor <span style="color: var(--accent);">CA</span> Sign Up</span>
+        <button class="backbtn" on:click={back}>←</button>
+        <span class="progress" style="width: calc({(step + 1) / steps.length} * (100% + 4rem));"></span>
+        <img src="/favicon.ico" alt="">
+        <span class="h1">Petrichor <span style="color: var(--accent);">CA</span> Sign Up</span>
     </div>
     <div class="content">
         <div class="input-cont">
@@ -91,7 +102,7 @@
                             console.log(data, "send to api");
                             register()
                         }
-                    }}> > </button>
+                    }}> → </button>
                 </form>
             </div>
             <div class="validation" style="color: red;">{validation}</div>
@@ -146,10 +157,30 @@
         display: flex;
         align-items: center;
         font-size: 48px;
+        position: relative;
     }
-    .header>span{
+    .header>.h1{
         margin-left: .2em;
         height: 0.8em;
+    }
+    .backbtn{
+        border-radius: 100%;
+        aspect-ratio: 1;
+        width: 1.2em;
+        background-color: white;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-right: 1em;
+    }
+    .progress{
+        position: absolute;
+        background-color: lightblue;
+        /* width: calc(100% + 4rem); */
+        height: 3px;
+        margin-left: -2rem;
+        bottom: -.5em;
+        transition: 200ms ease-in-out;
     }
     @media (max-width: 1000px){
         .input-cont{

@@ -4,15 +4,56 @@
 </div>
 <div class="content">
     <div class="btns">
-        <a href="/onboard" type="text" class="tp-field input">Sign Up</a>
-        <a href="/login" type="text" class="tp-field input" data-underline="--accent">Log in</a>
+        <a href="/onboard" type="text" class="tp-field input" data-underline="--accent">Sign Up</a>
+        <a href="/login" type="text" class="tp-field input" >Log in</a>
     </div>
-    <p>Your chance to be the know-it-all, go-to person for Petrichor'23 at your institution! Plus, exciting perks await those who ask work for it!!</p>
+    <p>30k Prize Pool</p>
+    <p>Earn more for each registration/participation you bring</p>
 </div>
-<div class="i">
+<div class="marketingbs">
+    <div class="card">
+        <h2>Benefits</h2>
+        <li>Win cash prizes from a pool of 30k if you are in the top 5 CAs </li>
+        <li>Earn ₹ 50 per extra registration above 5 (for workshops and tech summit)</li>
+        <li>Win exciting goodies and pro-show tickets of Petrichor'24</li>
+        <li>Earn certificate of merit issued by Petrichor, IIT Palakkad for your valiant efforts</li>
+        <li>Get referral codes that participants can use that to avail a flat 10% discount for workshops!</li>
+    </div>
+    <div class="card neg">
+        <h2>All You Have to do</h2>
+        <li>Share our content, posters and links to your peers and college groups</li>
+        <li>Encourage students from your college and contacts to participate in our events and workshops</li>
+    </div>
 </div>
+<!-- <div class="i"> -->
+<!-- </div> -->
 
 <style>
+    .marketingbs{
+        margin-left: 2vw;
+        width: 90%;
+        display: flex;
+        margin-bottom: 3em;
+    }
+    .card{
+        width: 50%;
+        height: 30em;
+        padding: 2em;
+        background-color: white;
+        color:black;
+    }
+    .neg{
+        background-color: black;
+        color: white
+    }
+    .card > h2{
+        font-size: 48px;
+    }
+    .card > li{
+        font-size: 24px;
+        margin-left: 2em;
+        margin-bottom: 1em;
+    }
     .content{
         margin-left: 2vw;
         width: 60%;
@@ -34,16 +75,44 @@
         100%{background-position:0% 0%}
     } */
     .petr{
+        position: relative;
         font-size: 15vw;
         transition: 200ms ease-in-out;
         margin: 0;
-        background: linear-gradient(140deg, var(--accent-dark), var(--accent), var(--accent-light), var(--accent),  var(--accent-light));
+        color: var(--accent);
+        /* background: linear-gradient(140deg, var(--accent-dark), var(--accent), var(--accent-light), var(--accent),  var(--accent-light)); */
         background-size: 200% 200%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        /* -webkit-background-clip: text; */
+        /* -webkit-text-fill-color: transparent; */
         /* animation: gradanim 3s ease-in-out infinite; */
 
         
+    }
+    .petr:hover::after{
+        bottom: -1rem;
+    }
+    .petr:hover::before{
+        bottom: -2rem;
+    }
+    .petr::after{
+        content: "PETRICHOR";
+        position: absolute;
+        text-shadow: -1px -1px 0 #FFF9, 1px -1px 0 #FFF9, -1px 1px 0 #FFF9, 1px 1px 0 #FFF9;
+        color: black;
+        z-index: -1;
+        left: 0;
+        bottom: -0.5rem;
+        transition: 100ms ease-in-out;
+    }
+    .petr::before{
+        content: "PETRICHOR";
+        position: absolute;
+        text-shadow: -1px -1px 0 #FFF5, 1px -1px 0 #FFF5, -1px 1px 0 #FFF5, 1px 1px 0 #FFF5;
+        color: black;
+        z-index: -1;
+        left: 0;
+        bottom: -0.95rem;
+        transition: 100ms ease-in-out;
     }
     .subheading{
         margin: 0;
@@ -52,11 +121,12 @@
         color: var(--accent-light);
     }
     .petr:hover{
-        transform: skew(-8deg);
+        /* transform: skew(-8deg); */
     }
     .btns{
         margin-top: 2em;
         margin-bottom: 2em;
+        display: flex;
     }
     .input{
         /* border: 0.05em solid var(--fg-color); */
@@ -72,6 +142,10 @@
         /* background-color: black; */
         border: white 2px solid;
         border-radius: .5em;
+        display: block;
+        width: 5em;
+        text-align: center;
+        margin: 1em;
     }
     /* .input::before{
         transition: 200ms ease-in-out;
@@ -116,7 +190,7 @@
         height: 100svh;
         border: 1px solid white;
         width: 100%;
-        background-image: url("favicon.ico");
+        /* background-image: url("favicon.ico"); */
         z-index: 0;
         filter:brightness(21%);
         background-size: 2%;
@@ -124,27 +198,44 @@
     }
     @media (max-width: 1000px){
         .petr{
-            margin-top: 1.5em;
+            margin-top: 1em;
+            margin-bottom: .5em;
         }
         .content{
             width: 90%;
         }
         .input{
-            width: 90%;
+            width: 4em;
+            margin: 0;
+            margin-inline: 0.2em;
             font-size: 24px;
-            margin-top: 4em;
-            margin-bottom: 1em;
+            margin-top: 2em;
+            margin-bottom: 4em;
         }
-        .content > p{
+        .btns{
+            margin-top: 0;
+        }
+        /* .content > p{
             width: 95%;
             text-align: justify;
             font-size: 20px;
             position: absolute;
             bottom: 0;
-        }
+        } */
         .i{
             background-size: 10%;
             animation-duration: 20s;
+        }
+        .marketingbs{
+            display: block;
+        }
+        .card{
+            width: 80%;
+            height: max-content;
+        }
+        .card > li{
+            margin-left: 0.6em;
+            font-size: 15px;
         }
     }
 </style>

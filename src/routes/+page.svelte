@@ -1,6 +1,6 @@
 <div class="banner">
     <h1 class="title petr">PETRICHOR</h1>
-    <h2 class="subheading">// THE CA PROGRAM //</h2>
+    <h2 class="subheading"> THE CA PROGRAM  </h2>
 </div>
 <div class="content">
     <div class="btns">
@@ -27,7 +27,7 @@
 </div>
 <!-- <div class="i"> -->
 <!-- </div> -->
-
+<span>Frontend By Kaushik Rawat</span>
 <style>
     .marketingbs{
         margin-left: 2vw;

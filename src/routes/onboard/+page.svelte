@@ -38,6 +38,16 @@
                 val = "Not A Valid Email"
             }
         }
+        else if (current_step == "phone"){
+            if (current_temp < 1000000000 || current_temp > 9999999999){
+                val = "Not a valid phone number. Please dont include +91"
+            }
+        }
+        else if (current_step == "current year of degree"){
+            if (Number(current_temp) > 6){
+                val = "year of study should be less than or equal to 6 "
+            }
+        }
 
         return val;
     }
@@ -59,7 +69,9 @@
                 username: data.name,
                 password: data.password,
                 phone: data.phone,
-                email: data.email
+                email: data.email,
+                college: data.college,
+                year: data["current year of degree"]
             })
         })
 

@@ -6,7 +6,7 @@
 
 <style>
     .main{
-        background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffut-cdn.s3.amazonaws.com%2Ficon_loading_email_512px.gif&f=1&nofb=1&ipt=9ea2aef29eb497b097151581e43467f76d454177cc564cf4e16d8588e96878df&ipo=images");
+        background-image: url('$lib/public/mail.gif');
         height: 100vh;
         filter: invert(1);
         background-repeat: no-repeat;

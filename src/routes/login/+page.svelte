@@ -35,6 +35,7 @@
             user_data.registrations = result.registrations;
         } else {
             alert("Username or Password is incorrect")
+            console.log(result)
         }
     }
 
@@ -48,9 +49,9 @@
         <div class="content">
             <form on:submit|preventDefault class="container">
                 <div class="input-cont">
-                    <div class="heading">username</div>
+                    <div class="heading">email</div>
                     <div class="input">
-                        <input type="text" placeholder="enter your username" class="tp-field inputbox" bind:value={username}>
+                        <input type="text" placeholder="enter your email" class="tp-field inputbox" bind:value={username}>
                     </div>
                     <!-- <div class="validation" style="color: red;">{validation}</div> -->
                 </div>

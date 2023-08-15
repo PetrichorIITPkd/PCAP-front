@@ -148,10 +148,12 @@
             font-size: 30px;
         }
         .main{
+            width: 90%;
             position: relative;
             top: unset;
             left: unset;
             transform: unset;
+            /* padding: 0; */
         }
     }
 </style>

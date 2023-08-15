@@ -87,7 +87,7 @@
 
 <div class="main">
     <div class="header">
-        <button class="backbtn" on:click={back}>←</button>
+        <button class="backbtn {step == 0 ? "disabled" : ""}" on:click={back}>←</button>
         <span class="progress" style="width: calc({(step + 1) / steps.length} * (100% + 4rem));"></span>
         <img src="/favicon.ico" alt="">
         <span class="h1">Petrichor <span style="color: var(--accent);">CA</span> Sign Up</span>
@@ -156,7 +156,9 @@
         transform: translate(-50%, -50%);
         width: 50em;
         height: 40em;
-        background-color: var(--accent-dark);
+        background-color: #532f8965;
+        /* opacity: 0.8; */
+        backdrop-filter: blur(3px);
         border-radius: 2em;
         padding: 2em;
         display: flex;
@@ -187,6 +189,10 @@
         cursor: pointer;
         margin-right: 1em;
     }
+    .disabled{
+        background-color: grey;
+        cursor:not-allowed;
+    }
     .progress{
         position: absolute;
         background-color: lightblue;
@@ -201,9 +207,10 @@
             width: 100%;
         }
         .main{
-            width: 90%;
+            width: 93%;
             height: 25em;
-            background-color: black;
+            background-color: transparent;
+            backdrop-filter: blur(3px);
         }
         .header{
             font-size: 40px;
@@ -216,6 +223,15 @@
             top: unset;
             left: unset;
             transform: unset;
+        }
+        .header>.h1{
+            font-size: 7vw;
+        }
+        .backbtn{
+            margin-right: .1em;
+        }
+        img{
+            display: none;
         }
     }
 </style>

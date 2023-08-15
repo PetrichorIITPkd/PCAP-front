@@ -80,6 +80,8 @@
         }
         .main{
             margin-top: 5vh;
+            width: max-content;
+            /* align-items: unset; */
         }
     }
 </style>

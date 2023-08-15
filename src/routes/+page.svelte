@@ -37,7 +37,7 @@
     }
     .card{
         width: 50%;
-        height: 30em;
+        min-height: 30em;
         padding: 2em;
         background-color: white;
         color:black;

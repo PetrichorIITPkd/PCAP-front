@@ -79,6 +79,8 @@
         console.log(result)
         if (result.registered){
             window.location.replace('/onboard/success')
+        } else {
+            alert(`The email ${data.email} is already registered as a Petrichor CA.`)
         }
     }
 </script>

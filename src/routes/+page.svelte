@@ -27,7 +27,7 @@
 </div>
 <!-- <div class="i"> -->
 <!-- </div> -->
-<span>Frontend by <a href="https://github.com/enchanteddev" style="color: lightblue;">Kaushik</a></span>
+<!-- <span>Frontend by <a href="https://github.com/enchanteddev" style="color: lightblue;">Kaushik</a></span> -->
 <style>
     .marketingbs{
         margin-left: 2vw;

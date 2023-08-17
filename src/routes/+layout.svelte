@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Petrichor CA Program</title>
+</svelte:head>
+
 <div class="container">
     <div class="sidebar">
         <span class="sidebar-text">

@@ -58,6 +58,8 @@
         }
     }
 
+    let r = false;
+
     const register = async () => {
         const response = await fetch(API_URL + API.register, {
             "method": "POST",
@@ -112,9 +114,13 @@
                             step++;
                             current_temp = "";
                             console.log(data)
+                            r = false;
                         } else {
                             console.log(data, "send to api");
-                            register()
+                            if (!r){
+                                register()
+                            }
+                            r = true;
                         }
                     }}> → </button>
                 </form>

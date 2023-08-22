@@ -13,7 +13,57 @@
     </div>
 </div>
 
+<!-- <span class="credits">
+</span>
+    The Petrichor Web Development Team, IIT Palakkad -->
+<footer>
+    <div class="links">
+        <a href="/contactus">Contact Us</a>
+        <a href="/contactus">Technical Issues?</a>
+        <a href="https://petrichor.events">Main Website</a>
+    </div>
+</footer>
 <style>
+    footer{
+        position: fixed;
+        width: 100vw;
+        bottom: 0;
+        display: grid;
+        place-items: center;
+        padding-top: .4em;
+        padding-bottom: .4em;
+        background-color: rgb(26, 26, 26);
+        font-size:min(20px, 4vw);
+    }
+    .credits{
+        display: grid;
+        place-items: center;
+    }
+    .links{
+        display: inline;
+        /* margin-bottom: 1em; */
+    }
+    .links > a{
+        text-decoration: unset;
+        color: inherit;
+        margin-inline: .3em;
+        position: relative;
+        cursor: pointer;
+    }
+    .links > a::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: .4em;
+        z-index: -1;
+        background-color: var(--accent);
+        left: 0;
+        bottom: 0;
+    }
+    .links > a:hover:after{
+        height: 1em;
+        transition: 200ms ease-in-out;
+    }
     .sidebar{
         width: 2vw;
         background-color: var(--accent-light);

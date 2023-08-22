@@ -13,6 +13,7 @@
     }
     h2{
         margin-top: 3em;
+        text-align: center;
     }
     p{
         margin-bottom: 0.2em;

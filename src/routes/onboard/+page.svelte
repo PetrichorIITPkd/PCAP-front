@@ -28,6 +28,12 @@
     let validation = "";
     const validate = (temp) => {
         let val = "";
+
+        if (current_temp == undefined || current_temp == "") {
+            val = `Please fill your ${current_step}`;
+            return val;
+        }
+
         if (current_step == "password (again)"){
             console.log(current_temp, data[steps[step - 1]])
             if (temp != data[steps[step - 1]]){
@@ -39,12 +45,18 @@
             }
         }
         else if (current_step == "phone"){
-            if (current_temp < 1000000000 || current_temp > 9999999999){
+            if (isNaN(current_temp)){
+                val = current_temp + " is not a phone number"
+            }
+            else if (current_temp < 1000000000 || current_temp > 9999999999){
                 val = "Not a valid phone number. Please dont include +91"
             }
         }
         else if (current_step == "current year of degree"){
-            if (Number(current_temp) > 6){
+            if (isNaN(current_temp)){
+                val = "Please only put your year as a number"
+            }
+            else if (Number(current_temp) > 6){
                 val = "year of study should be less than or equal to 6 "
             }
         }

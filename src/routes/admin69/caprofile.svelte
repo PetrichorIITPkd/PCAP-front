@@ -7,6 +7,7 @@
     export let year;
 </script>
 <div class="main">
+    
     <h1>{name} | <span class="ca">{ca}</span></h1>
     <p class="details">{email}</p>
     <p class="details">{phone}</p>

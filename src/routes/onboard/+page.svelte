@@ -56,7 +56,7 @@
             if (isNaN(current_temp)){
                 val = "Please only put your year as a number"
             }
-            else if (Number(current_temp) > 6){
+            else if (Number(current_temp) > 6 || Number(current_temp) < 1){
                 val = "year of study should be less than or equal to 6 "
             }
         }

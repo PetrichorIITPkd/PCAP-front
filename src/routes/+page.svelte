@@ -17,7 +17,6 @@
         <li>Earn ₹ 50 per extra registration above 5 (for workshops and tech summit)</li>
         <li>Win exciting goodies and pro-show tickets of Petrichor'24</li>
         <li>Earn certificate of merit issued by Petrichor, IIT Palakkad for your valiant efforts</li>
-        <li>Get referral codes that participants can use that to avail a flat 10% discount for workshops!</li>
     </div>
     <div class="card neg">
         <h2>All You Have to do</h2>

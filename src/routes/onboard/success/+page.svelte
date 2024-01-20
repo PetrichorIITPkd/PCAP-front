@@ -1,6 +1,6 @@
 <div class="main">
     <h1>Registered Successfully</h1>
-    <p>You will now recieve an email on your email address. <a href="/login">Login</a> after you have verified your email via the welcome mail</p>
+    <p><a href="/login">Login</a> here.</p>
 
 </div>
 
